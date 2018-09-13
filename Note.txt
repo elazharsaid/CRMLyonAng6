@@ -6,3 +6,6 @@ angular essentiel
 Todo highlight, todo+
 
 todd motto
+
+git 
+add, commit push.
