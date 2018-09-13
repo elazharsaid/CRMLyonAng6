@@ -1,0 +1,43 @@
+
+<app-tableau [headers]="headers" > <!-- [lastRow]="addPresta" -->
+
+  <ng-container *ngFor="let itemPresta of collection" >
+    <app-prestation [presta]="itemPresta"></app-prestation>
+  </ng-container>
+
+  <div>
+    <a [routerLink]="['add']" routerLinkActive="router-link-active" > add presta </a>
+  </div>
+
+</app-tableau>
+
+<!--
+<div class="container-fluid">
+  <div class="table-responsive">
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col" *ngFor="let head of header" >{{head}}</th>
+        <th scope="col">Client</th>
+        <th scope="col">NB jour</th>
+        <th scope="col">Tjm HT</th>
+        <th scope="col">Total HT</th>
+        <th scope="col">Total TTC</th>
+        <th scope="col">Action</th >
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let itemPresta of collection" >
+        <app-prestation [presta]="itemPresta"></app-prestation> <binding proprty>
+      </ng-container>
+    </tbody>
+  </table>
+
+
+ </div>
+
+</div>
+-->
+
+

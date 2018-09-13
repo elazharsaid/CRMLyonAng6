@@ -1,0 +1,35 @@
+<div class="d-flex align-items-center header">
+  <!--
+    <div>
+      <fa-icon [icon]="faBars" (click)="toggle()"></fa-icon>
+    </div>
+  -->
+    <div>
+        <button (click)="toggle()">nav</button>
+      </div>
+    <div class="title flex-grow-1 text-center">
+      <h1>{{ title }}</h1>
+    </div>
+
+    <div>
+        <button>login</button>
+      </div>
+
+ <!--
+    <div *ngIf="user | async; then authenticated else guest">
+    </div>
+
+    <ng-template #guest>
+      <fa-icon [icon]="faUser"></fa-icon>
+    </ng-template>
+
+    <ng-template #authenticated>
+      <div *ngIf="user | async as user">
+        <span>{{ user.displayName }}</span>
+        <img [src]="user.photoURL">
+        <button (click)="logout()">logout</button>
+      </div>
+    </ng-template>
+  -->
+
+  </div>

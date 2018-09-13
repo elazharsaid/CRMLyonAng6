@@ -1,0 +1,40 @@
+<form [formGroup]="form" (ngSubmit)="process()" >
+
+    <div class="form-group">
+      <label for="typePresta">type Presta</label>
+      <input  formControlName="typePresta" type="text" class="form-control" id="typePresta" >
+
+      <div class="alert alert-danger" *ngIf="isError('typePresta') && form.get('typePresta').touched" >invalide type</div>
+    </div>
+
+    <div class="form-group">
+      <label for="client">client</label>
+      <input formControlName="client" type="text" class="form-control" id="client" >
+      <div class="alert alert-danger" *ngIf="form.get('client').invalid && form.get('client').touched" >invalide type</div>
+    </div>
+
+    <div class="form-group">
+      <label for="nbj">nbj</label>
+      <input formControlName="nb_jour" type="text" class="form-control" id="nbj">
+    </div>
+
+    <div class="form-group">
+      <label for="tjm">tjm</label>
+      <input formControlName="tjm_ht" type="text" class="form-control" id="tjm">
+    </div>
+
+    <div class="form-group">
+      <label for="tauxTva">tauxTva</label>
+      <input formControlName="taux_tva" type="text" class="form-control" id="tauxTva">
+    </div>
+
+    <div class="form-group">
+      <label for="state">state</label>
+      <select formControlName="state"  class="form-control" id="state">
+        <option [value]="state" *ngFor="let state Of states">{{ state }}</option>
+      </select>
+    </div>
+
+    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Submit</button>
+
+  </form>

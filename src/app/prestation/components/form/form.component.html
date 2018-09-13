@@ -1,0 +1,39 @@
+<form #form="ngForm" (ngSubmit)="process()" >
+
+  <div class="form-group">
+    <label for="typePresta">type Presta</label>
+    <input name="typePresta" #nom="ngModel" [(ngModel)]="newItem.typePresta" type="text" class="form-control" id="typePresta" required minlength="4">
+    {{newItem.typePresta}}
+    <div class="alert alert-danger" *ngIf="nom.invalid && nom.touched" >invalide type</div>
+  </div>
+
+  <div class="form-group">
+    <label for="client">client</label>
+    <input name="client" [(ngModel)]="newItem.client" type="text" class="form-control" id="client" >
+  </div>
+
+  <div class="form-group">
+    <label for="nbj">nbj</label>
+    <input name="nbj" [(ngModel)]="newItem.nb_jour" type="text" class="form-control" id="nbj">
+  </div>
+
+  <div class="form-group">
+    <label for="tjm">tjm</label>
+    <input name="tjm" [(ngModel)]="newItem.tjm_ht" type="text" class="form-control" id="tjm">
+  </div>
+
+  <div class="form-group">
+    <label for="tauxTva">tauxTva</label>
+    <input name="tauxTva" [(ngModel)]="newItem.taux_tva" type="text" class="form-control" id="tauxTva">
+  </div>
+
+  <div class="form-group">
+    <label for="state">state</label>
+    <select name="stateSel" [(ngModel)]="newItem.state" class="form-control" id="state">
+      <option name="state" [value]="state" *ngFor="let state Of states">{{ state }}</option>
+    </select>
+  </div>
+
+  <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Submit</button>
+
+</form>

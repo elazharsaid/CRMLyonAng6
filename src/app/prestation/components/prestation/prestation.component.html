@@ -1,0 +1,15 @@
+<th>{{presta.typePresta}}</th>
+<th>{{presta.client}}</th>
+<th>{{presta.nb_jour}}</th>
+<th>{{presta.tjm_ht | localCurrency}}</th>
+<th>{{presta | total | currency : 'EUR'}}</th> <!-- presta.totalht -->
+<th>{{presta | total: presta.taux_tva | currency : 'EUR'}}</th>  <!-- presta.totalttc -->
+<!--<th>{{presta.state}}</th> -->
+<td [appState]="presta.state"> <!--[ngClass]="{'state-option': presta.state === states.OPTION}" -->
+  <select (change)="update($event)">
+    <option [value]="presta.state">{{presta.state}}</option>
+    <ng-container *ngFor="let state of states">
+      <option *ngIf="state !== presta.state" [value]="state" >{{ state }}</option>
+    </ng-container>
+  </select>
+</td>

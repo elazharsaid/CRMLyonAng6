@@ -1,0 +1,8 @@
+Module utiles :
+Bracket pair colorie
+indent raindow
+angular doc
+angular essentiel
+Todo highlight, todo+
+
+todd motto
