@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { Router } from '@angular/router';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { AppComponent } from './app.component';
 import { UiModule } from './ui/ui.module';
@@ -13,6 +15,8 @@ import { PageNotfoundModule } from './page-notfound/page-notfound.module';
 
 import { registerLocaleData, CurrencyPipe } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { environment } from '../environments/environement.firebase';
+
 
 // the second parameter 'fr' is optional
 registerLocaleData(localeFr, 'fr');
@@ -26,10 +30,13 @@ registerLocaleData(localeFr, 'fr');
     BrowserModule,
     UiModule,
     NgbModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase),
     AppRoutingModule,
     LoginModule,
     /*PrestationModule,*/
-    PageNotfoundModule
+    PageNotfoundModule,
+    AngularFireModule,
+    AngularFirestoreModule
   ],
   providers: [ { provide: LOCALE_ID, useValue: 'fr' }, CurrencyPipe ],
   bootstrap: [AppComponent]

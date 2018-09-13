@@ -16,7 +16,7 @@ export class Prestation implements PrestationI {
 
   constructor(fields?: Partial<Prestation>) {
     if (fields) {
-      //console.log(fields);
+      // console.log(fields);
       Object.assign(this, fields);
     }
   }

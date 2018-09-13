@@ -21,8 +21,20 @@ export class PrestationComponent implements OnInit {
     // console.log(e.target.value);
 
     const state = e.target.value;
-    this.presta.state = state;
-    this.prestationService.update(this.presta, state);
+    // this.presta.state = state;
+    this.prestationService.update(this.presta, state).then(() => {
+      this.presta.state = state;
+    });
+  }
+
+
+  public delete(): void {
+    // const state = e.target.value;
+    // this.presta.state = state;
+    this.prestationService.delete(this.presta).then((res) => {
+      console.log('you can delete this');
+      this.prestationService.message$.next('you can delete this but you ...!');
+    });
   }
 
 }

@@ -44,7 +44,7 @@ export class FormReactiveComponent implements OnInit {
     /*this.nItem = this.form.value;*/
 
     const item = new Prestation(this.form.value);
-    console.log(item);
+    // console.log(item);
     this.nItem.emit(item);
   }
 
