@@ -33,3 +33,6 @@ envoyer au parent editcomponent un @Output (existe deja) avec l'id
 sur editeComponent.ts
 utiliser la methode update() du service PresationService et lui passer un obj ave l'id
 
+
+mock and spies
+

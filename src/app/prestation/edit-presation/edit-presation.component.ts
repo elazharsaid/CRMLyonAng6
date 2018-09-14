@@ -30,7 +30,7 @@ export class EditPresationComponent implements OnInit {
   public update(presta: Prestation): void {
     // const item = new Prestation(this.form.value);
     this.prestationService.update(presta).then(() => {
-      this.router.navigate(['/prestaion']);
+      this.router.navigate(['/prestaions']);
     });
     // console.log(this.newItem);
   }
