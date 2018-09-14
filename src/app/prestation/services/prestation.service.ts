@@ -6,6 +6,7 @@ import { fackeCollection } from './fackecollection';
 import { State } from '../../shared/enums/state.enum';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class PrestationService {
 
   public message$: Subject<string> = new Subject();
 
-  constructor(private afs: AngularFirestore) {
+  constructor(private afs: AngularFirestore, private http: HttpClient) {
     // this.collection = fackeCollection;
     this.itemsCollection = afs.collection<Prestation>('id');
     this.collection$ = this.itemsCollection.valueChanges().pipe(
@@ -32,6 +33,8 @@ export class PrestationService {
         return tab;
       })
     );
+
+    // this.collection$ = this.http.get('urlapi/prestation');
   }
 
   get collection$(): Observable<Prestation[]> {
@@ -59,6 +62,7 @@ export class PrestationService {
     return this.itemsCollection.doc(id).set(prestation).catch((e) => {
       console.log(e);
     });
+    // return this.http.post('urlapi/prestations', item);
   }
 
   update(item: Prestation, option?: State): Promise<any> {
@@ -69,6 +73,8 @@ export class PrestationService {
     return this.itemsCollection.doc(item.id).update(presta).catch((e) => {
       console.log(e);
     });
+
+    // return this.http.patch('urlapi/prestations', item.id, presta);
   }
 
 
@@ -79,11 +85,13 @@ export class PrestationService {
         console.log(e);
       });
     }
-    return;
+
+    // return this.http.delete('urlapi/prestations/${item.id}');
   }
 
   getPrestation(id: string): Observable<Prestation> {
     return this.itemsCollection.doc<Prestation>(id).valueChanges();
+    // return this.http.get('urlapi/prestations/${id}');
   }
 
 

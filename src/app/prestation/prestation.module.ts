@@ -10,6 +10,8 @@ import { AddPrestationComponent } from './containers/add-prestation/add-prestati
 import { FormComponent } from './components/form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormReactiveComponent } from './components/form-reactive/form-reactive.component';
+import { EditComponent } from './components/edit/edit.component';
+import { EditPresationComponent } from './edit-presation/edit-presation.component';
 
 @NgModule({
   imports: [
@@ -19,7 +21,7 @@ import { FormReactiveComponent } from './components/form-reactive/form-reactive.
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [ListPrestationComponent, PrestationComponent, AddPrestationComponent, FormComponent, FormReactiveComponent]
+  declarations: [ListPrestationComponent, PrestationComponent, AddPrestationComponent, FormComponent, FormReactiveComponent, EditComponent, EditPresationComponent]
   /*exports: [ListPrestationComponent]* not used after declartaion of root*/
 })
 export class PrestationModule {

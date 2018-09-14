@@ -7,5 +7,29 @@ Todo highlight, todo+
 
 todd motto
 
-git 
+git
 add, commit push.
+
+Suite:tp
+
+cree une route avec id et un resolve
+creation du service resolve
+sur le resolve recuperer l'id passer dans la route
+injection de prestation service
+dans la methode resolve  appeler la methode getpresation(id)
+retourner le resulta de la requete si info recuperer sinon false
+et router.navigate vers la lise de prestation
+
+sur editcomponent.ts
+recuepere dans le router l'objet que le resolve a routourné
+passer cet objet a app-form via un @Input()
+
+
+sur form-reactive.ts ajouter @Input pour recuepere l'objet passé depuis editcomponent
+dans createForm(), utiliser dernieres pour pré-remplir le formulaire
+dans process() utiliser spread operator pour ajouter l'id a l'objet this.form.value
+envoyer au parent editcomponent un @Output (existe deja) avec l'id
+
+sur editeComponent.ts
+utiliser la methode update() du service PresationService et lui passer un obj ave l'id
+

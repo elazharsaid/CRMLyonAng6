@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 /*import { CommonModule } from '@angular/common';*/
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
+import { EditComponent } from './prestation/components/edit/edit.component';
 /*import { ListPrestationComponent } from './prestation/containers/list-prestation/list-prestation.component';
 import { LoginComponent } from './login/containers/login/login.component';
 import { PageNotFoundComponent } from './page-notfound/containers/page-not-found/page-not-found.component';*/
@@ -21,7 +22,14 @@ const appRoutes: Routes = [
   {
     path: 'prestations',
     loadChildren: './prestation/prestation.module#PrestationModule',
-  }
+  },
+
+  // {
+  //   path: 'store/:id',
+  //   component: EditComponent,
+  //   resolve: { data: ResolveService }
+  // }
+
 ];
 
 @NgModule({

@@ -16,6 +16,7 @@ import { PageNotfoundModule } from './page-notfound/page-notfound.module';
 import { registerLocaleData, CurrencyPipe } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { environment } from '../environments/environement.firebase';
+import { HttpClientModule } from '@angular/common/http';
 
 
 // the second parameter 'fr' is optional
@@ -36,7 +37,8 @@ registerLocaleData(localeFr, 'fr');
     /*PrestationModule,*/
     PageNotfoundModule,
     AngularFireModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    HttpClientModule
   ],
   providers: [ { provide: LOCALE_ID, useValue: 'fr' }, CurrencyPipe ],
   bootstrap: [AppComponent]

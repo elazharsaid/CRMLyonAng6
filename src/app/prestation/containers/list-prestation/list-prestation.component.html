@@ -2,7 +2,7 @@
 <app-tableau [headers]="headers" > <!-- [lastRow]="addPresta" -->
 
   <ng-container *ngFor="let itemPresta of collection$ | async" >
-    <app-prestation [presta]="itemPresta"></app-prestation>
+    <app-prestation (click)="edit(itemPresta)" [presta]="itemPresta"></app-prestation>
   </ng-container>
 
   <div>

@@ -6,7 +6,7 @@
 <th>{{presta | total: presta.taux_tva | currency : 'EUR'}}</th>  <!-- presta.totalttc -->
 <!--<th>{{presta.state}}</th> -->
 <td [appState]="presta.state"> <!--[ngClass]="{'state-option': presta.state === states.OPTION}" -->
-  <select (change)="update($event)">
+  <select (change)="update($event)" (click)="$event.stopPropagation()">
     <option [value]="presta.state">{{presta.state}}</option>
     <ng-container *ngFor="let state of states">
       <option *ngIf="state !== presta.state" [value]="state" >{{ state }}</option>
@@ -15,5 +15,5 @@
 </td>
  <!-- <button  type="submit" class="btn btn-primary">{{displayForm}}</button> -->
 <th>
-  <button (click)="delete($event)">delete</button>
+  <button (click)="$event.stopPropagation(); delete($event)">delete</button>
 </th>

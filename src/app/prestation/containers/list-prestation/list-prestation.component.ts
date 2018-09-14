@@ -2,6 +2,7 @@ import { Component, OnInit, Type, OnDestroy } from '@angular/core';
 import { PrestationService } from '../../services/prestation.service';
 import { Prestation } from '../../../shared/models/prestation-m';
 import { Observable, observable, Subscription, Subject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-prestation',
@@ -21,7 +22,7 @@ export class ListPrestationComponent implements OnInit, OnDestroy {
 
   private sub: Subscription;
 
-  constructor(private prestationService: PrestationService) {
+  constructor(private prestationService: PrestationService, private router: Router) {
 
   }
 
@@ -50,6 +51,9 @@ export class ListPrestationComponent implements OnInit, OnDestroy {
     // this.sub.unsubscribe();
   }
 
+  public edit(presta: Prestation): void {
+    this.router.navigate(['prestations/edit', presta.id]);
+  }
 
 
 
